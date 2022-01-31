@@ -1,0 +1,17 @@
+.buttons{
+    display: flex;
+    justify-content: flex-start;
+    width: 806px;
+    margin-bottom: 15px;
+}
+
+.buttons__container{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 46.5px;
+}
+
+.buttons__container div{
+    margin: 0px 3.5px;
+    cursor: pointer;
+}

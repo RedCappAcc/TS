@@ -1,0 +1,22 @@
+.inputSearch{
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.inputSearch input{
+    width: 723px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 21px;
+    font-size: 20px;
+}
+.inputSearch button{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    margin-left: 10px;
+}

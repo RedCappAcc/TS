@@ -1,0 +1,33 @@
+.task{
+    display: flex;
+    align-items: center;
+    width: 759px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+.task__content{
+    display: flex;
+    align-items: center;
+}
+
+.delete__task{
+    margin-right: 12px;
+}
+
+.checkbox input{
+    display: none;
+}
+
+.fake__ckeckbox{
+    width: 32px;
+    height: 32px;
+    background-color: #F3F3F3;
+    border: 1px solid #8B8B8B ;
+    border-radius: 50%;
+    margin-left: 7px;
+    margin-right: 13px;
+}
