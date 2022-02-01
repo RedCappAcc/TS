@@ -13,10 +13,25 @@
     font-size: 20px;
 }
 .inputSearch button{
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 20px;
     background-color: white;
     border: none;
     margin-left: 10px;
+}
+
+@media (max-width:840px) {
+    .inputSearch input{
+        max-width: 100%;
+    }
+    .inputSearch{
+        max-width: 100%;
+    }
+}
+
+@media (max-width:380px) {
+    .inputSearch input{
+        max-width: 75%;
+    }
 }

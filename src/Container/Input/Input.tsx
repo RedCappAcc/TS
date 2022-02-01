@@ -8,17 +8,21 @@ const arrowImg = require('./img/arrow.png')
 
 function Input(){
     const dispatch = useDispatch() 
+
     let [input, setInput] = useState<string>('')
+
     function onChangeHadler(e:React.ChangeEvent<HTMLInputElement>){
         setInput(e.currentTarget.value)
     }
     function onClickHadler(){
-        let todo:Itodo = {status:false,text:input}
-        dispatch(addTodo(todo))
-        setInput('')
+        if(input.length>0){
+            let todo:Itodo = {status:false,text:input}
+            dispatch(addTodo(todo))
+            setInput('')
+        }
     }
     function onPressEnter(e:React.KeyboardEvent){
-        if(e.key==='Enter'){
+        if(e.key==='Enter'&&input.length>0){
             let todo:Itodo = {status:false,text:input}
             dispatch(addTodo(todo))
             setInput('')

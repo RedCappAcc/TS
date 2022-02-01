@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0px  10px;
 }
 
 header{
@@ -12,4 +13,10 @@ header{
     font-family: Montserrat;
     margin-top: 127px;
     margin-bottom: 22px;
+}
+
+@media (max-width:400px) {
+    header{
+        font-size: 40px;
+    }
 }

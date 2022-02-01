@@ -38,6 +38,10 @@ function rootReducer (state:IInitialState = initialState, action:IAction):IIniti
             return({
                 ...state,todos:newTodos
             })
+        case actionsTypes.EDIT_ACTIVE_TODO:
+            return({
+                ...state, activeTodo:action.payload
+            })
         default:
             return(
                 state

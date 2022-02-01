@@ -8,8 +8,12 @@ import './Tasks.css'
 
 function Tasks(){
     const dispatch = useDispatch()
+
     const selectTodos = (state:IInitialState)=>state.todos
     const todosRedux:Itodo[] = useSelector(selectTodos);
+    const selectActiveTodo = (state:IInitialState)=>state.activeTodo
+    const activeTodo:number = useSelector(selectActiveTodo);
+    
     let [todo, setTodo] = useState<Array<any>>([])
 
     useEffect(():void=>{
@@ -21,13 +25,14 @@ function Tasks(){
     },[])
     useEffect(():void=>{
        const result =  todosRedux.map((el,index)=>{
-            return <Task text={el.text} status = {el.status}  key = {index} />
+            return <Task activeTodo = {activeTodo} index = {index} text={el.text} status = {el.status}  key = {index+1*(Math.random()*1000)} />
         }
        )
        setTodo(result)
 
-        },[todosRedux]
+        },[todosRedux,activeTodo]
     )
+
     return(
         <div className='tasks'>
             {todo}

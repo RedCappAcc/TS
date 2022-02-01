@@ -2,17 +2,24 @@ import './Task.css'
 import { Itodo } from '../../store/actions/actionInterface'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { editStatus, deleteTodo } from '../../store/actions/action'
+import { editStatus, deleteTodo, editActiveTodo } from '../../store/actions/action'
 const deleteImg = require('./img/delete.png')
 
 
-function Task(props:Itodo){
+
+interface ITodoProps extends Itodo{
+    index:number
+    activeTodo:number
+}
+
+
+function Task(props:ITodoProps){
     const dispatch = useDispatch()
+    
     let [cls, setCls] = useState<Array<string>>(['task__content'])
     let [taskCls, setTaskCls] = useState<Array<string>>(['task'])
     const randomId = String(Math.random()*1000)
     const [checked, setChecked] = useState<boolean>(props.status)
-
 
     function changeStatus(status:boolean):void{
         const todos:string|null = localStorage.getItem('todos')
@@ -71,8 +78,19 @@ function Task(props:Itodo){
         }
     },[checked])
 
+    useEffect(()=>{
+        if(props.activeTodo===props.index){
+            setTaskCls([...taskCls, 'selected'])
+        }
+    },[props.activeTodo])
+
+
+    function onClickHadler(){
+        dispatch(editActiveTodo(props.index))
+    }
+
     return(
-        <div className={taskCls.join (' ')} >
+        <div className={taskCls.join (' ') } onClick = {onClickHadler} >
             <div className='task__body'>
                 <div className='checkbox'>
                     <input type="checkbox" id = {randomId} checked = {checked} onChange = {onCheckedHadler}/>

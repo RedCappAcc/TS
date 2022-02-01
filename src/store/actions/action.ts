@@ -36,3 +36,9 @@ export function deleteTodo(text:string):IAction{
         type:actionsTypes.DELETE_TODO, payload:text
     })
 }
+
+export function editActiveTodo(activeTodoNumber:number):IAction{
+    return({
+        type:actionsTypes.EDIT_ACTIVE_TODO, payload:activeTodoNumber
+    })
+}

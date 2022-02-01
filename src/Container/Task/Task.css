@@ -1,13 +1,14 @@
 .task{
     display: flex;
     align-items: center;
-    width: 759px;
-    height: 50px;
+    max-width: 783px;
+    min-height: 50px;
     background-color: white;
     border-radius: 20px;
     justify-content: space-between;
     font-size: 20px;
     margin: 5px 0px;
+    border: 3px solid #9AA9C0;;
 }
 .task__content{
     display: flex;
@@ -15,7 +16,7 @@
 }
 
 .delete__task{
-    margin-right: 12px;
+    margin: 0px 12px;
 }
 
 .checkbox{
@@ -26,6 +27,7 @@
 .task__body{
     display: flex;
     align-items: center;
+    padding: 10px 0px;
 }
 
 
@@ -37,8 +39,8 @@
 label::before{
     display: inline-block;
     content: '';
-    width: 32px;
-    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     background-color: #F3F3F3;
     border: 1px solid #8B8B8B ;
     border-radius: 50%;
@@ -78,6 +80,7 @@ label::before{
         transform: rotate(-0.5deg);
     }
 }
-.active{
-    background-color: red;
+
+.selected{
+    border: 3px solid rgb(93, 130, 233);
 }

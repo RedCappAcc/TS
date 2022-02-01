@@ -5,3 +5,9 @@
     padding: 10px;
     min-height: 60vh;
 }
+
+@media (max-width:840px) {
+    .tasks{
+        width: 96%;
+    }
+}
