@@ -1,6 +1,7 @@
 export interface Itodo{
     status:boolean,
-    text:string
+    text:string,
+    id:number
 }
 
 export interface IInitialState{

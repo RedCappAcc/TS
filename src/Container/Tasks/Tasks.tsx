@@ -25,11 +25,10 @@ function Tasks(){
     },[])
     useEffect(():void=>{
        const result =  todosRedux.map((el,index)=>{
-            return <Task activeTodo = {activeTodo} index = {index} text={el.text} status = {el.status}  key = {index+1*(Math.random()*1000)} />
+            return <Task activeTodo={activeTodo} index = {index} text={el.text} status = {el.status}  key = {el.id} id = {el.id}  />
         }
        )
        setTodo(result)
-
         },[todosRedux,activeTodo]
     )
 

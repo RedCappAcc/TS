@@ -16,14 +16,14 @@ function Input(){
     }
     function onClickHadler(){
         if(input.length>0){
-            let todo:Itodo = {status:false,text:input}
+            let todo:Itodo = {status:false,text:input,id:Date.now()}
             dispatch(addTodo(todo))
             setInput('')
         }
     }
     function onPressEnter(e:React.KeyboardEvent){
         if(e.key==='Enter'&&input.length>0){
-            let todo:Itodo = {status:false,text:input}
+            let todo:Itodo = {status:false,text:input,id:Date.now()}
             dispatch(addTodo(todo))
             setInput('')
         }

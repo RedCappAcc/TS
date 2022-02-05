@@ -13,9 +13,9 @@ export function addTodo(payload:Itodo):IAction{
     })
 }
 
-export function editStatus(text:string):IAction{
+export function editStatus(id:number){
     return({
-        type:actionsTypes.EDIT_STATUS,payload:text
+        type:actionsTypes.EDIT_STATUS,payload:id
     })
 }
 
@@ -25,15 +25,15 @@ export function initTodo(payload:Itodo[]):IAction{
     })
 }
 
-export function deleteTodo(text:string):IAction{
+export function deleteTodo(id:number):IAction{
     const todos = localStorage.getItem('todos')
     if(todos!==null){
-        const newTodo = JSON.parse(todos).filter((el:Itodo)=>el.text!==text)
+        const newTodo = JSON.parse(todos).filter((el:Itodo)=>el.id!==id)
         localStorage.setItem('todos',JSON.stringify(newTodo))
         initTodo(newTodo)
     }
     return({
-        type:actionsTypes.DELETE_TODO, payload:text
+        type:actionsTypes.DELETE_TODO, payload:id
     })
 }
 

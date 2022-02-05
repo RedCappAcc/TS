@@ -19,14 +19,14 @@ function rootReducer (state:IInitialState = initialState, action:IAction):IIniti
             })
         case actionsTypes.EDIT_STATUS:
             const result = state.todos.map(el=>{
-                if(el.text===action.payload){
+                if(el.id===action.payload){
                     return({
-                        text:el.text, status:!el.status
+                        text:el.text, status:!el.status, id:el.id
                     })
                 }
                 else{
                     return({
-                        text:el.text, status:el.status
+                        text:el.text, status:el.status, id:el.id
                     })
                 }
                 })
@@ -34,7 +34,7 @@ function rootReducer (state:IInitialState = initialState, action:IAction):IIniti
                 ...state,todos:result
             })
         case actionsTypes.DELETE_TODO:
-            const newTodos:Itodo[] = state.todos.filter(el=>el.text!==action.payload)
+            const newTodos:Itodo[] = state.todos.filter(el=>el.id!==action.payload)
             return({
                 ...state,todos:newTodos
             })
